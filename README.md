@@ -1,6 +1,6 @@
-# README
+<!-- # README -->
 
-This README would normally document whatever steps are necessary to get the
+<!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
@@ -13,7 +13,7 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
+* Database initialization -->
 
 # Chat-space DB設計
 ## usersテーブル
@@ -54,10 +54,10 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-* How to run the test suite
+<!-- * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
-* ...
+* ... -->
