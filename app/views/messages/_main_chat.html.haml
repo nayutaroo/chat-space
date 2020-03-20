@@ -1,0 +1,46 @@
+.chat-main
+  .chat-main__group-info
+    .group
+      .group__name
+        TECH::EXPERT
+      .group__member-list
+        Member: kohei
+    .btn
+      = link_to "#", class: "btn__edit" do
+        Edit
+  .chat-main__message-list
+    .message
+      .message__info
+        .messenger
+          kohei
+        .time
+          2019/11/20(Wed) 17:43:01
+      .message__text
+        こんにちは！
+    .message
+      .message__info
+        .messenger
+          kohei
+        .time
+          2019/11/20(Wed) 17:43:01
+      .message__text
+        こんにちは！
+    .message
+      .message__info
+        .messenger
+          kohei
+        .time
+          2019/11/20(Wed) 17:43:01
+      .message__text
+        こんにちは！
+  .chat-main__message-form
+    .items 
+      .form
+        .form__message
+          %input{type: "text", placeholder: "type a message", class: "input-text"}
+          .img-icon
+            %label{class: "image"}
+              = icon('fas', 'image')
+              %input{type: "file", class: "image--delete"}
+      .btn
+        %input{type: "submit", class: "btn__send", value: "Send"}
