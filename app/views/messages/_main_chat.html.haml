@@ -2,45 +2,61 @@
   .chat-main__group-info
     .group
       .group__name
-        TECH::EXPERT
+        = @group.name
       .group__member-list
-        Member: kohei
+        Member: 
+        - @group.users.each do |user|
+          -# - binding.pry
+          = user.name
     .btn
-      = link_to "#", class: "btn__edit" do
+      = link_to edit_group_path(@group) , class: "btn__edit" do
         Edit
   .chat-main__message-list
-    .message
-      .message__info
-        .messenger
-          kohei
-        .time
-          2019/11/20(Wed) 17:43:01
-      .message__text
-        こんにちは！
-    .message
-      .message__info
-        .messenger
-          kohei
-        .time
-          2019/11/20(Wed) 17:43:01
-      .message__text
-        こんにちは！
-    .message
-      .message__info
-        .messenger
-          kohei
-        .time
-          2019/11/20(Wed) 17:43:01
-      .message__text
-        こんにちは！
+    - @messages.each do |message|  
+      .message
+        .message__info
+          .messenger
+            = message.user.name
+          .time
+            = message.created_at
+        -if message.body.present? # 文が存在するかどうか確認
+          .message__text
+            = message.body
+        = image_tag message.image.url, class: 'message__image' if message.image.present? # 画像があるかどうか確認
+    -# .message
+    -#   .message__info
+    -#     .messenger
+    -#       kohei
+    -#     .time
+    -#       2019/11/20(Wed) 17:43:01
+    -#   .message__text
+    -#     こんにちは！
+    -# .message
+    -#   .message__info
+    -#     .messenger
+    -#       kohei
+    -#     .time
+    -#       2019/11/20(Wed) 17:43:01
+    -#   .message__text
+    -#     こんにちは！
+    
   .chat-main__message-form
     .items 
       .form
-        .form__message
-          %input{type: "text", placeholder: "type a message", class: "input-text"}
-          .img-icon
-            %label{class: "image"}
-              = icon('fas', 'image')
-              %input{type: "file", class: "image--delete"}
-      .btn
-        %input{type: "submit", class: "btn__send", value: "Send"}
+        = form_for [@group, @message] do |f|
+          .form__message
+            = f.text_field :body, class: "input-text", placeholder: "type a message"
+            .img-icon
+              %label{class: "image"}
+                = icon('fas', 'image')
+                = f.file_field 'image', class: "image--delete"
+          = f.submit 'Send', class: "btn__send"
+
+      -#   .form__message
+      -#     %input{type: "text", placeholder: "type a message", class: "input-text"}
+      -#     .img-icon
+      -#       %label{class: "image"}
+      -#         = icon('fas', 'image')
+      -#         %input{type: "file", class: "image--delete"}
+      -# .btn
+      -#   %input{type: "submit", class: "btn__send", value: "Send"}
