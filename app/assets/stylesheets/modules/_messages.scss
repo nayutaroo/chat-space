@@ -8,7 +8,6 @@ $aqua-blue: #38aef0;
 
 .wrapper{
   display:flex;
-  height:100vh;
 }
 
 .side-bar{
@@ -161,12 +160,12 @@ $aqua-blue: #38aef0;
       height: 50px;
 
       .form{
-        background-color:white;
-        margin-right:15px; 
+        // background-color:white;
         width:100%;
 
         &__message{ 
-          position: relative;     
+          position: relative;  
+          width: 100%;   
 
           .input-text{
             border: 0;
@@ -200,10 +199,15 @@ $aqua-blue: #38aef0;
           cursor: pointer;
           height:50px;
           line-height:50px;
+          margin-left:15px; 
           text-align: center;
           width:100px;
         }
       }
     }
   }
+}
+
+.new_message{
+  display:flex;
 }
