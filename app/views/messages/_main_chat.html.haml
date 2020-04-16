@@ -12,7 +12,7 @@
         Edit
   .chat-main__message-list
     - @messages.each do |message|  
-      .message
+      .message{data: {message: {id: message.id}}}
         .message__info
           .messenger
             = message.user.name
