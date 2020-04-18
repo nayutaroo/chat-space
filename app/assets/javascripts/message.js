@@ -36,8 +36,7 @@ $(function(){
 
     if (message.image){
 
-      var html = 
-      `<div class="message"  data-message-id="${message.id}">
+      var html = `<div class="message"  data-message-id="${message.id}">
       <div class="message__info">
       <div class="messenger">
       ${message.user_name}
@@ -48,17 +47,14 @@ $(function(){
       </div>`
 
       if(message.body){
-        html += 
-        `<div class="message__text">${message.body}</div>`
+        html += `<div class="message__text">${message.body}</div>`
       }
 
-      html +=
-      `<img src=" ${message.image} " class="message__image" >
+      html += `<img src=" ${message.image} " class="message__image" >
        </div>`
     }
     else{
-      var html = 
-      `<div class="message" data-message-id="${message.id}">
+      var html = `<div class="message" data-message-id="${message.id}">
        <div class="message__info">
       <div class="messenger">
       ${message.user_name}
@@ -69,8 +65,7 @@ $(function(){
       </div>`
 
       if(message.body){
-        html += 
-        `<div class="message__text">
+        html +=  `<div class="message__text">
         ${message.body}`
       }
     }
