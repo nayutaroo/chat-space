@@ -18,3 +18,5 @@
 
 # 画像ファイルがGitHubにコミットされないようにする。
 public/uploads/*
+
+config/secrets.yml
