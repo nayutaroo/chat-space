@@ -15,6 +15,9 @@ Things you may want to cover:
 
 * Database initialization -->
 
+# Webアプリ公開URL
+http://18.177.68.8/users/sign_in
+
 # Chat-space DB設計
 ## usersテーブル
 |Column|Type|Options|
